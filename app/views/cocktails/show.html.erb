@@ -16,6 +16,10 @@
         <tr>
           <td><%= dose.ingredient.name %></td>
           <td><%= dose.description  %></td>
+          <td>
+            <%= link_to "Delete", dose_path(dose),data: {turbo_method: :delete, turbo_confirm: "Removing #{dose.ingredient.name } "},class: "btn btn-outline-danger btn-sm" %>
+            <%# <i class="fa-solid fa-trash card-trip-user"></i> %>
+          </td>
         </tr>
       <% end %>
     </tbody>
