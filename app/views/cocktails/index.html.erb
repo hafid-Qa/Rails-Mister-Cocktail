@@ -1,9 +1,11 @@
 <div class="container">
   <div class="cards mt-5">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= cocktail.name %>
-      </div>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= cocktail.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
