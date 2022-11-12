@@ -61,7 +61,10 @@ development:
 test:
   <<: *default
   database: Rails_Mister_Cocktail_test
-
+  host: <%= ENV['host']%>
+  port: <%= ENV['port']%>
+  username: <%= ENV['username']%>
+  password: <%= ENV['password']%>
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
