@@ -21,3 +21,8 @@
     </tbody>
   </table>
 </div>
+<%= simple_form_for [@cocktail,@dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, include_blank: false, collection: @ingredients %>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>

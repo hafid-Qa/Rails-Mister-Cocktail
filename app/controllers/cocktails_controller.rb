@@ -5,6 +5,9 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @dose = Dose.new
+    @current_ingredient = @cocktail.ingredients
+    @ingredients = Ingredient.where.not(id: @current_ingredient).order(name: :asc)
   end
 
   def new
