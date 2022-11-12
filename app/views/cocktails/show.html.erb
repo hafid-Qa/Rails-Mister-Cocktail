@@ -28,5 +28,6 @@
 <%= simple_form_for [@cocktail,@dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient, include_blank: false, collection: @ingredients %>
+   <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
