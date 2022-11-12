@@ -2,7 +2,7 @@
   <div class="cards mt-5">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail) do %>
-        <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo.attached? ? cl_image_path(cocktail.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
           <%= cocktail.name %>
         </div>
       <% end %>

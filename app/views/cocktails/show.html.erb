@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.photo.attached? ? cl_image_path(@cocktail.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
   <div class="container text-center">
     <h1><strong><%= @cocktail.name.upcase %></strong></h1>
     <%# <p>Change your life and learn to code at one of our campuses around the world.</p>
@@ -28,6 +28,6 @@
 <%= simple_form_for [@cocktail,@dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient, include_blank: false, collection: @ingredients %>
-   <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
